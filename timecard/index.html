@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>Time Card</title>
+    <!-- manifest.json -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f858294033.js"></script>
+</head>
+<body class="bg-dark text-light">
+    <div id="wrapper" class="mt-5">
+        <div class="row justify-content-center mb-3">
+            <div class="col-12">
+                <h4 class="txt_center mfs_l">Time Card System(Prototype)<i class="fa fa-spinner fa-spin d-none"></i></h4>
+            </div>
+        </div>
+        <div id="login" class="row justify-content-center d-none">
+            <div class="row col-10 justify-content-center">
+                <div class="row col-10 txt_center">
+                    <div class="col-4">
+                        <span class="mfs_m">User</span>
+                    </div>
+                    <div class="col-8">
+                        <input id="user" class="form-control form_h_m mfs_m" type="text" />
+                    </div>
+                </div>
+                <div class="row col-10 txt_center mt-4">
+                    <div class="col-4">
+                        <span class="mfs_m">Password</span>
+                    </div>
+                    <div class="col-8">
+                        <input id="password" class="form-control form_h_m mfs_m" type="password" />
+                    </div>
+                </div>
+                <div class="col-10 txt_center mt-5">
+                    <button id="loginBtn" class="btn btn-light btn_m mfs_m">Login</button>
+                </div>
+            </div>
+        </div>
+        <div id="timecard" class="row d-none">
+            <div class="col-12 h100">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="txt_center mt-2">
+                                    <button id="checkInBtn" class="btn btn-primary mfs_m btn_m">Check In</button>
+                                    <button id="checkOutBtn" class="btn btn-secondary mfs_m btn_m">Check Out</button>
+                                    <!-- モーダル使うときの属性 => data-toggle="modal" data-target="#modal" -->
+                                </div>
+                            </div>
+                            <div id="calendar" class="col-8">
+                                <table class="table mt-4 text-light mfs_m">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Date</th>
+                                            <th>In</th>
+                                            <th>Out</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mon</td>
+                                            <td class="tbl_dt">--/--</td>
+                                            <td>9:00</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tue</td>
+                                            <td class="tbl_dt"></td>
+                                            <td>9:00</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wed</td>
+                                            <td class="tbl_dt"></td>
+                                            <td>9:15</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thu</td>
+                                            <td class="tbl_dt"></td>
+                                            <td>9:00</td>
+                                            <td>18:45</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fri</td>
+                                            <td class="tbl_dt"></td>
+                                            <td>9:00</td>
+                                            <td>--:--</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt_holiday">Sat</td>
+                                            <td class="tbl_dt"></td>
+                                            <td>--:--</td>
+                                            <td>--:--</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt_holiday">Sun</td>
+                                            <td class="tbl_dt"></td>
+                                            <td>--:--</td>
+                                            <td>--:--</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-12 p-3 mb-5 txt_center">
+                                <button id="logoutBtn" class="btn btn-light mfs_m btn_m">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal" tabindex="-1"
+             role="dialog" aria-labelledby="label1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content bg-secondary">
+                    <div class="modal-header">
+                        <h5 class="modal-title mfs_l" id="label1">Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mfs_m">
+                        <p id="modalMsg"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light mfs_m btn_m" data-dismiss="modal">Cancel</button>
+                        <button id="registerBtn" type="button" class="btn btn-primary mfs_m btn_m" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="isCheckOut" type="hidden" />
+    </div>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/timecard.js"></script>
+</body>
+</html>

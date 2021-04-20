@@ -1,0 +1,28 @@
+.h100 {
+    height: 100vh;
+}
+
+.txt_center {
+    text-align: center;
+}
+
+.mfs_l {
+    font-size: 48px;
+}
+
+.mfs_m {
+    font-size: 34px;
+}
+
+.txt_holiday {
+    color: red;
+}
+
+.btn_m {
+    width: 200px;
+    height: 80px;
+}
+
+.form_h_m {
+    height: 80px;
+}
